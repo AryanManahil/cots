@@ -1,8 +1,22 @@
-<h1>Products</h1>
-<ul>
-    {% for product in products %}
-        <li>{{ product.order_no}}</li>
-    {% endfor%}
+{% extends 'base.html' %}
 
-
-</ul>
+{% block content %}
+    <h1>ORDERS</h1>
+    <div class="row">
+        {% for product in products %}
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ product.product_image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Order No: {{product.order_no }} <br></h5>
+                    <h6 class="card-title">Product Name: {{product.product_name }} <br></h6>
+                    <h7 class="card-title">Order Quantity: {{product.order_qty }} <br></h7>
+                    <h8 class="card-title">Shipment Date: {{product.shipment_date }} <br></h8>
+                    <p class="card-text">Buyer Name :{{product.buyer_name}}</p>
+                    <a href="#" class="btn btn-primary">Order Details</a>
+                </div>
+            </div>
+        </div>
+         {% endfor%}
+    </div>
+{% endblock %}
