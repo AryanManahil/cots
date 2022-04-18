@@ -1,4 +1,9 @@
+
 from django.db import models
+
+
+
+
 
 class Product(models.Model):
     order_no = models.CharField(max_length=100)
@@ -7,6 +12,7 @@ class Product(models.Model):
     product_image = models.CharField(max_length=2083)
     order_qty = models.IntegerField()
     shipment_date = models.DateTimeField()
+
 
 class Buyer(models.Model):
     buyer_name = models.CharField(max_length=255)
