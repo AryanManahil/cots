@@ -9,4 +9,4 @@ def index(request):
 def new(request):
    # return HttpResponse('New Deashboard')
    products = Product.objects.all()
-   return render(request, 'index.html', {'products': products})
+   return render(request, 'dashboard.html', {'products': products})
